@@ -1,63 +1,119 @@
-// Conditional statements
 
-// if (kondisi) {
-//     //blok kode jika benar
-// } else {
-//     // blok kode jika kondisi salah
+// Logical Operators:
+// AND (&&)
+
+// Mengembalikan true jika semua kondisi bernilai true.
+// Contoh:
+// javascript
+// Salin
+// Edit
+// true && true; // true
+// true && false; // false
+// OR (||)
+
+// Mengembalikan true jika salah satu kondisi bernilai true.
+// Contoh:
+// javascript
+// Salin
+// Edit
+// true || false; // true
+// false || false; // false
+// NOT (!)
+
+// Membalik nilai boolean: true jadi false, false jadi true.
+// Contoh:
+// javascript
+// Salin
+// Edit
+// !true; // false
+// !false; // true
+
+// Soal 1: AND (&&)
+// Cek apakah dua angka adalah bilangan genap. Jika ya, tampilkan "Kedua angka adalah genap." Jika tidak, tampilkan "Salah satu atau kedua angka tidak genap."
+
+// let angka1 = prompt('Masukkan Angka yg pertama : ');
+// let angka2 = prompt("Masukkan Angka yg kedua : ")
+
+// let num1 = Number(angka1)
+// let num2 = Number(angka2)
+
+// function cekBilanganGenap(num1, num2) {
+//     if (num1 % 2 === 0 && num2 % 2 === 0) {
+//         console.log(`Kedua angka yang anda masukkan bernilai genap`);
+//     } else {
+//         console.log(`Salah satu angka yang anda masukkan tidak bernilai genap`);
+//     }
+
+//     return;
 // }
 
-// // Ternary Operator
-// let hasil = kondisi ? nilaiJikaBenar : nilaiJikaSalah;
+// const run = cekBilanganGenap(num1, num2);
+// console.log(run);
 
-// Soal Latihan
-// Soal 1: Gunakan if...else
-// Tuliskan program untuk mengecek apakah sebuah angka positif, negatif, atau nol.
 
-// let inputUser = prompt('Masukkan angka: ');
+// Soal 2: OR (||)
+// Buat program untuk mengecek apakah seseorang memenuhi salah satu dari dua kriteria:
 
-// if (inputUser > 0) {
-//     alert('Angka tersebut positif');
-// } else if (inputUser < 0) {
-//     alert(`Angka tersebut negatif`);
-// } else {
-//     alert(`Masukkan angka yang valid!`);
+// Umur di atas 18.
+// Memiliki kartu pelajar.
+// Tampilkan pesan:
+
+// "Akses diperbolehkan" jika memenuhi salah satu kriteria.
+// "Akses ditolak" jika tidak.
+
+// let personAge = prompt("Masukkan umur anda: ");
+// let punyaKartuPelajar = confirm('Apakah anda memiliki kartu pelajar? ');
+
+// let age = Number(personAge);
+
+// function cekAkses(age, punyaKartuPelajar) {
+//     if (age > 18 || punyaKartuPelajar) {
+//         alert(`Akses diperbolehkan!`)
+//     } else {
+//         alert(`Akses ditolak!`)
+//     }
+
+//     return;
 // }
 
-// Soal 2: Gunakan Ternary Operator
-// Tuliskan program untuk mengecek apakah angka ganjil atau genap menggunakan ternary operator.
+// const run2 = cekAkses(age, punyaKartuPelajar);
+// console.log(run2);
 
-// let inputUser2 = prompt("Masukkan angka: ");
+// Soal 3: NOT (!)
+// Buat program yang meminta pengguna memasukkan angka. Jika angka tersebut bukan angka (NaN), tampilkan pesan "Input bukan angka!"
 
-// let cekBilanganGenap = (inputUser2 % 2 === 0) ? "Bilangan tersebut genap" : "bilangan tersebut ganjil";
-// alert(`${cekBilanganGenap}`);
+// let inputNumber = prompt('Masukkan angka : ');
 
-// Soal 3: Kombinasi if...else dan Ternary
-// Tuliskan program untuk mengecek:
 
-// Jika umur pengguna di atas 18, tampilkan "Kamu sudah dewasa."
-// Jika umur antara 13 dan 18, tampilkan "Kamu remaja."
-// Jika umur di bawah 13, tampilkan "Kamu anak-anak." Gunakan if...else di satu bagian dan ternary operator di bagian lain.
-
-// let inputAge = prompt("Masukkan umur: ");
-// let angka = Number(inputAge);
-
-// if (angka > 18) {
-//     console.log(`Kamu sudah dewasa`);
+// if (!isNaN(inputNumber)) {
+//     console.log(`Angka yang anda masukkan adalah ${inputNumber}`);
 // } else {
-//     let kategori = angka >= 13 ? "Kamu remaja" : "Kamu anak anak";
-//     console.log(kategori)
+//     console.log('Input bukan angka!');
 // }
 
-// Soal 4: Nested Ternary Operator
-// Cek apakah angka:
+// Soal 4: Gabungan AND, OR, dan NOT
+// Buat program untuk mengecek:
 
-// Positif: Jika angka genap → "Positif dan Genap", jika ganjil → "Positif dan Ganjil".
-// Negatif: Jika angka genap → "Negatif dan Genap", jika ganjil → "Negatif dan Ganjil".
-// Nol: "Angka adalah nol."
+// Jika angka lebih besar dari 10 dan genap → Tampilkan "Angka besar dan genap."
+// Jika angka lebih besar dari 10 tapi tidak genap → Tampilkan "Angka besar tapi ganjil."
+// Jika angka kurang dari atau sama dengan 10 → Tampilkan "Angka kecil."
 
-let inputUser = prompt("Masukkan angka: ");
+let inputNumber = prompt('Masukkan angka : ');
+let number1 = Number(inputNumber);
 
-let angka = Number(inputUser);
+function checkNumber(number) {
+    if (number > 10 && number % 2 === 0) {
+        console.log(`Angka besar dan genap`);
+    } else if (number > 10 && number % 2 === 1) {
+        console.log(`Angka besar tapi ganjil`);
+    } else if (number < 10 && number === 10) {
+        console.log(`Angka kecil`);
+    } else {
+        console.log(`Input bukan angka!`);
+    }
 
-let hasil = angka > 0 ? angka % 2 === 0 ? "Positif dan genap" : "Positif dan ganjil" : angka < 0 ? angka % 2 === 0 ? "Negatif dan genap" : "Negatif dan ganjil" : "angka adalah nol";
-console.log(hasil);
+    return;
+}
+
+const run4 = checkNumber(number1);
+console.log(run4);
