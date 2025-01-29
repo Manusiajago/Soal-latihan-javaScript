@@ -1,0 +1,14 @@
+Latihan
+Buat Object:
+
+Buat object buku dengan properti judul, penulis, dan tahunTerbit.
+Tambahkan method deskripsi yang mengembalikan string:
+"Judul buku ini adalah [judul], ditulis oleh [penulis] pada tahun [tahunTerbit]."
+Manipulasi Object:
+
+Tambahkan properti genre.
+Ubah tahunTerbit.
+Hapus properti genre.
+Looping Object:
+
+Cetak semua properti buku menggunakan for...in.
